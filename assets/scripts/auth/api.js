@@ -1,48 +1,49 @@
 'use strict'
 
-const app = require('../app-data.js')
+const config = require('../config')
+const store = require('../store')
 
 const signUp = (success, failure, data) => {
-  console.log("Sign up request queued")
+  console.log('Sign up request queued')
   $.ajax({
-    method : 'POST',
-      url : app.app.api + '/sign-up',
+    method: 'POST',
+    url: config.apiUrl + '/sign-up',
     data
   }).done(success).fail(failure)
 }
 
 const signIn = (success, failure, data) => {
-  console.log("Sign in request queued")
+  console.log('Sign in request queued')
   $.ajax({
-    method : 'POST',
-    url : app.app.api + '/sign-in',
+    method: 'POST',
+    url: config.apiUrl + '/sign-in',
     data
   }).done(success).fail(failure)
 }
 
 const signOut = (success, failure) => {
-  console.log("Sign out request queued")
+  console.log('Sign out request queued')
   $.ajax({
     method: 'DELETE',
-    url: app.app.api + '/sign-out/' + app.id,
+    url: config.apiUrl + '/sign-out/' + store.id,
     headers: {
-      Authorization: 'Token token=' + app.token,
+      Authorization: 'Token token=' + store.token
     }
   }).done(success)
-  .fail(failure)
+    .fail(failure)
 }
 
 const changePW = (success, failure, data) => {
-  console.log("Change password request queued")
+  console.log('Change password request queued')
   $.ajax({
     method: 'PATCH',
-    url: app.app.api + '/change-password/' + app.id,
+    url: config.apiUrl + '/change-password/' + store.id,
     data,
     headers: {
-      Authorization: 'Token token=' + app.token,
+      Authorization: 'Token token=' + store.token
     }
   }).done(success)
-  .fail(failure)
+    .fail(failure)
 }
 
 module.exports = {

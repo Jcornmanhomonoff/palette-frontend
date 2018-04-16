@@ -1,47 +1,46 @@
 'use strict'
 
-const app = require('../app-data.js')
+const config = require('../config')
+const store = require('../store')
 
 const addFavorite = (success, failure, id, tag) => {
   // debugger
   $.ajax({
     method: 'POST',
-    url: app.app.api + 'favorites',
+    url: config.apiUrl + 'favorites',
     headers: {
-      Authorization: 'Token token=' + app.token,
+      Authorization: 'Token token=' + store.token
     },
     data: {
-      "favorite": {
-        "dribble": id,
-        "tag": tag
+      'favorite': {
+        'dribble': id,
+        'tag': tag
       }
-    },
+    }
   })
     .done(success)
     .fail(failure)
 }
-
 
 const getFavorite = (success, failure) => {
   $.ajax({
     method: 'GET',
-    url: app.app.api + 'favorites',
+    url: config.apiUrl + 'favorites',
     headers: {
-      Authorization: 'Token token=' + app.token,
-    },
+      Authorization: 'Token token=' + store.token
+    }
   })
     .done(success)
     .fail(failure)
 }
 
-
 const deleteFavorite = (success, failure, id) => {
   $.ajax({
     method: 'DELETE',
-    url: app.app.api + 'favorites/' + id,
+    url: config.apiUrl + 'favorites/' + id,
     headers: {
-      Authorization: 'Token token=' + app.token,
-    },
+      Authorization: 'Token token=' + store.token
+    }
   })
     .done(success)
     .fail(failure)
@@ -50,15 +49,15 @@ const deleteFavorite = (success, failure, id) => {
 const editFavorite = (success, failure, id, tag) => {
   $.ajax({
     method: 'PATCH',
-    url: app.app.api + 'favorites/' + id,
+    url: config.apiUrl + 'favorites/' + id,
     headers: {
-      Authorization: 'Token token=' + app.token,
+      Authorization: 'Token token=' + store.token
     },
     data: {
-      "favorite": {
-        "tag": tag
+      'favorite': {
+        'tag': tag
       }
-    },
+    }
   })
     .done(success)
     .fail(failure)
