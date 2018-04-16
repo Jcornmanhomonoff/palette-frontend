@@ -1,0 +1,35 @@
+.textHolder {
+  text-align: left;
+  align-content: center;
+  position: absolute;
+  margin-top: -200px;
+  padding-left: 30px;
+}
+
+.favoriteHolder {
+  position: relative;
+  display: inline-block;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.favoriteImage {
+  position: relative;
+  z-index: -1;
+}
+
+.favoriteTitle{
+  color: white;
+  text-shadow: 2px 2px $hot-pink;
+  text-transform: uppercase;
+  font-size: 17px;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.favoriteHover {
+  display: none;
+}

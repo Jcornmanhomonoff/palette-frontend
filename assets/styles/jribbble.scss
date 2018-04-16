@@ -1,0 +1,19 @@
+.jribble-content {
+  width: 100%;
+  padding-top: 50px;
+}
+
+ul.shots {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $hover-purple;
+}
+
+.projectTitle{
+  text-shadow: 2px 2px $hot-pink;
+}

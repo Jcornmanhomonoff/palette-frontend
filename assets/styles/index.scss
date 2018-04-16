@@ -1,2 +1,37 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700,700i');
+
+@import 'colors';
+@import 'cover';
+@import 'carousel';
+@import 'imagehover';
+@import 'jribbble';
+@import 'handlebars';
+
+
+body{
+  background: linear-gradient(45deg, $pink 0%,$blue 100%);
+}
+
+
+.nav-box{
+  background-color: rgba(0, 0, 0, 1);
+  border: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  // position: fixed;
+}
+
+.content{
+  overflow: scroll;
+}
+
+.container-fluid{
+  padding: 0;
+}
+
+.carousel {
+  margin-left: 140px
+}
