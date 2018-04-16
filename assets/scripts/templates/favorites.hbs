@@ -1,0 +1,13 @@
+{{#each data}}
+  <div class="favoriteHolder">
+    <img src={{this.dribbleObject.images.normal}} class="favoriteImage">
+      <div class="textHolder">
+        <h2 class="favoriteTitle">{{this.dribbleObject.title}}</h2>
+        <div class="favoriteHover">
+          <p><div class="favoriteTag">{{this.favoriteTag}}</div></p>
+          <p><a href="#" class="editTag" data-id={{this.railsID}}>Change Tag</a></p>
+          <p><a href="#" class="deleteFavorite" data-id={{this.railsID}}>Remove from Favorites</a></p>
+        </div>
+      </div>
+  </div>
+{{/each}}
