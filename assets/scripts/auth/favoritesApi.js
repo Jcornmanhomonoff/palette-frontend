@@ -3,8 +3,16 @@
 const config = require('../config')
 const store = require('../store')
 
+const popularShots = () => {
+  $.ajax({
+    method: 'GET',
+    url: 'https://dribbble.com/popular_shots'
+  })
+}
+
 const addFavorite = (success, failure, id, tag) => {
   // debugger
+  console.log('here')
   $.ajax({
     method: 'POST',
     url: config.apiUrl + 'favorites',
@@ -67,5 +75,6 @@ module.exports = {
   addFavorite,
   getFavorite,
   deleteFavorite,
-  editFavorite
+  editFavorite,
+  popularShots
 }
