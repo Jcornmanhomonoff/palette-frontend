@@ -15,7 +15,7 @@ jribbble.shots(function (shotsArray) {
 
   // for each shot on the page, give it a link and an image
   shotsArray.forEach(function (shot) {
-    console.log('shot is ', shot)
+    // console.log('shot is ', shot)
     html.push('<div class="shots--shot hovereffect" data-id="' + shot.id + '">')
     html.push('<a href="' + shot.html_url + '" target="_blank">')
     html.push('<img src="' + shot.images.normal + '">')
