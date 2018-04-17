@@ -8,6 +8,7 @@
 
 $(() => {
   require('./example')
+  require('./jribbble')
 
   const getFormFields = require('../../lib/get-form-fields')
 
