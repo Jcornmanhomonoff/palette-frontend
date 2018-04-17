@@ -4,8 +4,7 @@ const store = require('../store.js')
 // const authApi = require('./api.js')
 // const getFormFields = require('../../../lib/get-form-fields')
 const favoritesApi = require('./favoritesApi')
-
-require('jribbble')
+const jribbble = require('jribbble')
 
 const success = (data) => {
   console.log(data)
@@ -58,12 +57,17 @@ const dribbbleFavorites = (data) => {
   console.log(data)
   const favoriteShots = []
   // debugger
+  // data.favorites.forEach(function (favorite) {
+  //   console.log(favorite)
+  //   jribbble.shots(favorite.dribbble, function (shot) {
+  //     console.log('shot is ', shot)
+  //     favoriteShots.push({ shot })
+  //   })
+  // })
   for (let i = 0; i < data.favorites.length; i++) {
-    $.jribbble.shots(data.favorites[i].dribble).then(function (res) {
+    jribbble.shots(data.favorites[i].dribble, function (shot) {
       favoriteShots.push({
-        dribbleObject: res,
-        railsID: data.favorites[i].id,
-        favoriteTag: data.favorites[i].tag
+        shot
       })
       console.log(favoriteShots)
     })
@@ -71,7 +75,7 @@ const dribbbleFavorites = (data) => {
   // tells template to wait for 1/4 second until data is pushed into array
   setTimeout(function () {
     console.log(favoriteShots)
-    const getfavoritesTemplate = require('./templates/favorites.handlebars')
+    const getfavoritesTemplate = require('../templates/favorites.hbs')
     $('#carousel-example-generic').html(getfavoritesTemplate({
       data: favoriteShots
     }))
