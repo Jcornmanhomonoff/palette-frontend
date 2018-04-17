@@ -3,17 +3,19 @@
 // const authApi = require('./auth/api')
 const authFavorites = require('./auth/favoritesApi')
 const authUi = require('./auth/ui')
+const jribbble = require('jribbble')
 
-require('jribbble')
-
-$.jribbble.setToken('829e7b01d4f7bf4fae734bf7af259e228706a7f08abb66459fad663ed89e68db')
-$.jribbble.shots({
-  per_page: 99
-}).then(function (shots) {
+jribbble.setToken('14bf2a248a42fcf7989fe3cbb10fc5377291102486a976e6efd54a22462ba549')
+jribbble.popular(function (shots) {
+  console.log(shots)
+})
+jribbble.shots(function (shotsArray) {
+  console.log(shotsArray)
   const html = []
 
   // for each shot on the page, give it a link and an image
-  shots.forEach(function (shot) {
+  shotsArray.forEach(function (shot) {
+    console.log('shot is ', shot)
     html.push('<div class="shots--shot hovereffect" data-id="' + shot.id + '">')
     html.push('<a href="' + shot.html_url + '" target="_blank">')
     html.push('<img src="' + shot.images.normal + '">')
@@ -22,12 +24,12 @@ $.jribbble.shots({
     html.push('<h2>' + shot.title + '</h2>')
     html.push('</div>')
     html.push('<p>')
-    html.push(`<a target="_blank" href="http://www.dribbble.com/${shot.user.username}">` + shot.user.name + '</a>')
-    html.push('<p>')
+    // html.push(`<a target="_blank" href="${shot.html_url}">` + shot.user + '</a>')
+    // html.push('<p>')
     html.push('<a href="#" class="addFavorite">Add to favorites</a>')
     html.push('<p>')
-    html.push('<a href="#">View on Dribbble</a>')
-    html.push('<a href="#' + shot.user.name + '"</h2>')
+    html.push(`<a target="_blank" href="${shot.html_url}">` + 'View on Dribbble</a>')
+    html.push('<a href="#' + shot.user + '"</h2>')
     // html.push('<i class="fa fa-twitter fa-facebook fa-instagram fa-dribbble">')
     html.push('</p></p></p></p></div></a></div>')
   })
