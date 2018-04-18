@@ -25,7 +25,7 @@ const signOut = (success, failure) => {
   console.log('Sign out request queued')
   $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + 'sign-out/' + store.id,
+    url: config.apiUrl + 'sign-out',
     headers: {
       Authorization: 'Token token=' + store.token
     }
