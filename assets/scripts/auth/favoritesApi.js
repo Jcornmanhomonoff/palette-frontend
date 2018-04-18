@@ -3,12 +3,12 @@
 const config = require('../config')
 const store = require('../store')
 
-const popularShots = () => {
-  $.ajax({
-    method: 'GET',
-    url: 'https://dribbble.com/popular_shots'
-  })
-}
+// const popularShots = () => {
+//   $.ajax({
+//     method: 'GET',
+//     url: 'https://dribbble.com/popular_shots'
+//   })
+// }
 
 const addFavorite = (success, failure, id, tag) => {
   // debugger
@@ -75,6 +75,6 @@ module.exports = {
   addFavorite,
   getFavorite,
   deleteFavorite,
-  editFavorite,
-  popularShots
+  editFavorite
+  // popularShots
 }
