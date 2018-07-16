@@ -6,9 +6,9 @@ const authUi = require('./auth/ui')
 const jribbble = require('jribbble')
 
 jribbble.setToken('14bf2a248a42fcf7989fe3cbb10fc5377291102486a976e6efd54a22462ba549')
-jribbble.popular(function (shots) {
-  console.log(shots)
-})
+// jribbble.popular(function (shots) {
+//   console.log(shots)
+// })
 jribbble.shots(function (shotsArray) {
   console.log(shotsArray)
   const html = []

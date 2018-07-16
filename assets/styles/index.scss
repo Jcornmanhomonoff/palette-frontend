@@ -12,12 +12,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'favorites';
 
 
-body{
+body {
   background: linear-gradient(45deg, $pink 0%,$blue 100%);
 }
 
 
-.nav-box{
+.nav-box {
   background-color: rgba(0, 0, 0, 1);
   border: 0;
   width: 100%;
@@ -25,14 +25,28 @@ body{
   // position: fixed;
 }
 
-.content{
+.content {
   overflow: scroll;
 }
 
-.container-fluid{
+.container-fluid {
   padding: 0;
 }
 
 .carousel {
-  margin-left: 140px
+  margin-left: 140px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  font-family: 'Montserrat', sans-serif;
+  & > li > a {
+    font-weight: 100;
+  }
 }
