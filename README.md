@@ -14,3 +14,9 @@ The point of my "tag" on each image was to allow users to filter their favorites
 1. As a user I would like to easily be able to search through my favorites to find a project.
 2. As a user I would like the site to be visually appealing so I don't get bored.
 3. As a user I would like the site to be simple so I can easily use it.
+
+##Wireframes
+![](./public/imgs/Wireframe.png)
+
+##Screenshot
+![](./public/imgs/ScreenShot.png)
